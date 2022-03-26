@@ -6,4 +6,10 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Update="Form1 - コピー.resx">
+      <DependentUpon>FormMain.resx</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>
