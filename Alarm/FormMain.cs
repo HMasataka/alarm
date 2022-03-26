@@ -22,11 +22,6 @@ namespace Alarm
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormMain_Load(object sender, EventArgs e)
         {
             timer1.Start();
@@ -40,11 +35,51 @@ namespace Alarm
             DateTime now = DateTime.Now;
             labelTime.Text = now.ToLongTimeString();
             labelDate.Text = DateTime.Today.ToString("yyyy年MM月dd日(ddd)");
+
+            if(alarmSetFlag == true)
+            {
+                if(alarmHour == now.Hour && alarmMinute == now.Minute && alarmSecond == now.Second)
+                {
+                    alarmSetFlag = false;
+                    MessageBox.Show("時間ですよ！","アラーム", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+
+        private void labelDate_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void labelStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            alarmSetFlag = false;
+            labelStatus.Text = "";
+        }
+
+        private void buttonSet_Click(object sender, EventArgs e)
+        {
+            FormSet formSet = new FormSet();
+            if(formSet.ShowDialog() == DialogResult.OK)
+            {
+                alarmSetFlag = true;
+                alarmHour = formSet.alarmHour;
+                alarmMinute = formSet.alarmMinute;
+                alarmSecond = formSet.alarmSecond;
+                labelStatus.Text = alarmHour.ToString("00") + ":" + alarmMinute.ToString("00") + ":" + alarmSecond.ToString("00"); 
+            }
+            formSet.Dispose();
         }
     }
 }

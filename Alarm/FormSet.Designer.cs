@@ -30,17 +30,17 @@ namespace Alarm
         private void InitializeComponent()
         {
             this.radioButtonAlarm = new System.Windows.Forms.RadioButton();
-            this.radioButtonTimer = new System.Windows.Forms.RadioButton();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownAlmHour = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownAlmMnt = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownTimMnt = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownTimSec = new System.Windows.Forms.NumericUpDown();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            this.radioButtonTimer = new System.Windows.Forms.RadioButton();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAlmHour)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAlmMnt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimMnt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimSec)).BeginInit();
             this.SuspendLayout();
             // 
             // radioButtonAlarm
@@ -54,57 +54,52 @@ namespace Alarm
             this.radioButtonAlarm.Text = "Alarm";
             this.radioButtonAlarm.UseVisualStyleBackColor = true;
             // 
-            // radioButtonTimer
+            // numericUpDownAlmHour
             // 
-            this.radioButtonTimer.AutoSize = true;
-            this.radioButtonTimer.Location = new System.Drawing.Point(434, 58);
-            this.radioButtonTimer.Name = "radioButtonTimer";
-            this.radioButtonTimer.Size = new System.Drawing.Size(81, 29);
-            this.radioButtonTimer.TabIndex = 1;
-            this.radioButtonTimer.TabStop = true;
-            this.radioButtonTimer.Text = "Timer";
-            this.radioButtonTimer.UseVisualStyleBackColor = true;
-            this.radioButtonTimer.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.numericUpDownAlmHour.Location = new System.Drawing.Point(164, 122);
+            this.numericUpDownAlmHour.Name = "numericUpDownAlmHour";
+            this.numericUpDownAlmHour.Size = new System.Drawing.Size(180, 31);
+            this.numericUpDownAlmHour.TabIndex = 2;
+            this.numericUpDownAlmHour.ValueChanged += new System.EventHandler(this.NumericUpDownAlm_ValueChanged);
             // 
-            // numericUpDown1
+            // numericUpDownAlmMnt
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(164, 122);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(180, 31);
-            this.numericUpDown1.TabIndex = 2;
+            this.numericUpDownAlmMnt.Location = new System.Drawing.Point(164, 207);
+            this.numericUpDownAlmMnt.Name = "numericUpDownAlmMnt";
+            this.numericUpDownAlmMnt.Size = new System.Drawing.Size(180, 31);
+            this.numericUpDownAlmMnt.TabIndex = 3;
+            this.numericUpDownAlmMnt.ValueChanged += new System.EventHandler(this.NumericUpDownAlm_ValueChanged);
             // 
-            // numericUpDown2
+            // numericUpDownTimMnt
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(164, 207);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(180, 31);
-            this.numericUpDown2.TabIndex = 3;
+            this.numericUpDownTimMnt.Location = new System.Drawing.Point(423, 122);
+            this.numericUpDownTimMnt.Name = "numericUpDownTimMnt";
+            this.numericUpDownTimMnt.Size = new System.Drawing.Size(180, 31);
+            this.numericUpDownTimMnt.TabIndex = 4;
+            this.numericUpDownTimMnt.ValueChanged += new System.EventHandler(this.NumericUpDownTim_ValueChanged);
             // 
-            // numericUpDown3
+            // numericUpDownTimSec
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(423, 122);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(180, 31);
-            this.numericUpDown3.TabIndex = 4;
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.Location = new System.Drawing.Point(423, 207);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(180, 31);
-            this.numericUpDown4.TabIndex = 5;
+            this.numericUpDownTimSec.Location = new System.Drawing.Point(423, 207);
+            this.numericUpDownTimSec.Name = "numericUpDownTimSec";
+            this.numericUpDownTimSec.Size = new System.Drawing.Size(180, 31);
+            this.numericUpDownTimSec.TabIndex = 5;
+            this.numericUpDownTimSec.ValueChanged += new System.EventHandler(this.NumericUpDownTim_ValueChanged);
             // 
             // buttonOK
             // 
+            this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonOK.Location = new System.Drawing.Point(164, 330);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(112, 34);
             this.buttonOK.TabIndex = 6;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // buttonCancel
             // 
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Location = new System.Drawing.Point(423, 330);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(112, 34);
@@ -112,25 +107,37 @@ namespace Alarm
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
+            // radioButtonTimer
+            // 
+            this.radioButtonTimer.AutoSize = true;
+            this.radioButtonTimer.Location = new System.Drawing.Point(423, 58);
+            this.radioButtonTimer.Name = "radioButtonTimer";
+            this.radioButtonTimer.Size = new System.Drawing.Size(81, 29);
+            this.radioButtonTimer.TabIndex = 8;
+            this.radioButtonTimer.TabStop = true;
+            this.radioButtonTimer.Text = "Timer";
+            this.radioButtonTimer.UseVisualStyleBackColor = true;
+            // 
             // FormSet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.radioButtonTimer);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
-            this.Controls.Add(this.numericUpDown4);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.radioButtonTimer);
+            this.Controls.Add(this.numericUpDownTimSec);
+            this.Controls.Add(this.numericUpDownTimMnt);
+            this.Controls.Add(this.numericUpDownAlmMnt);
+            this.Controls.Add(this.numericUpDownAlmHour);
             this.Controls.Add(this.radioButtonAlarm);
             this.Name = "FormSet";
             this.Text = "Form2";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            this.Load += new System.EventHandler(this.FormSet_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAlmHour)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAlmMnt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimMnt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimSec)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,12 +146,12 @@ namespace Alarm
         #endregion
 
         private System.Windows.Forms.RadioButton radioButtonAlarm;
-        private System.Windows.Forms.RadioButton radioButtonTimer;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown numericUpDownAlmHour;
+        private System.Windows.Forms.NumericUpDown numericUpDownAlmMnt;
+        private System.Windows.Forms.NumericUpDown numericUpDownTimMnt;
+        private System.Windows.Forms.NumericUpDown numericUpDownTimSec;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.RadioButton radioButtonTimer;
     }
 }
